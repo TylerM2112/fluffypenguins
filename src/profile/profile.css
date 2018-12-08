@@ -1,0 +1,26 @@
+.profile-container {
+  width: 60%;
+  background-color: darkgray;
+  margin: auto;
+  height: 100vh;
+}
+
+.user-info-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 20px;
+  border: 1px solid black;
+}
+
+.user-details-container {
+  margin-top: 20px;
+}
+
+.user-image-container > img{
+  width: 200px;
+}
+
+.address-list-container{
+  margin-top: 10px;
+}
