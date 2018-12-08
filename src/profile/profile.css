@@ -2,14 +2,13 @@
   width: 60%;
   background-color: darkgray;
   margin: auto;
-  height: 100vh;
 }
 
 .user-info-container {
+  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  padding: 20px;
   border: 1px solid black;
 }
 
@@ -18,9 +17,35 @@
 }
 
 .user-image-container > img{
-  width: 200px;
+  width: 50%;
 }
 
 .address-list-container{
   margin-top: 10px;
+}
+
+.address-panel {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  border: 1px solid black;
+  padding: 15px;
+  margin: 10px;
+}
+
+.friend-request-panel {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border: 1px solid black;
+  padding: 15px;
+  margin: 10px;
+  font-size: 1.4em;
+}
+.friend-image-container {
+  width: 30%;
+}
+
+.friend-image-container > img {
+  width: 20%;
 }
