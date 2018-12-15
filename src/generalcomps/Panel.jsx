@@ -1,4 +1,5 @@
 import React from 'react';
+import mwSmall from '../assets/images/mwLogoSmall.png';
 
 const Panel = ({ address }) => {
   return (

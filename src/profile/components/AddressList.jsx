@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import mwSmall from '../../assets/images/mwLogoSmall.png';
+
 
 import '../profile.css';
-
+import Panel from '../../generalcomps/Panel';
 
 class AddressList extends Component {
   constructor(props) {
