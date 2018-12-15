@@ -16,7 +16,7 @@ export default class Profile extends Component {
     return (
       <div className="profile-container">
     <UserDetails />
-    <AddressList />
+        <AddressList address={alist}/>
     <FriendRequests />
     <GroupRequests />
     <EventRequests />
@@ -24,3 +24,33 @@ export default class Profile extends Component {
     );
   }
 }
+
+const alist = [
+  {
+    label: "Home",
+    address: "19920 N 23rd Ave",
+    address2: "#2045",
+    city: "Phoenix",
+    state: "AZ",
+    zip: 85027,
+    favorited: true,
+  },
+  {
+    label: "Work",
+    address: "19920 N 23rd Ave",
+    address2: "#2045",
+    city: "Phoenix",
+    state: "AZ",
+    zip: 85027,
+    favorited: false,
+  },
+  {
+    label: "School",
+    address: "19920 N 23rd Ave",
+    address2: "#2045",
+    city: "Phoenix",
+    state: "AZ",
+    zip: 85027,
+    favorited: false,
+  },
+];
