@@ -2,13 +2,19 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const massive = require('massive');
 //const session = require('express-session');
-//const axios = require('axios');
+const axios = require('axios');
 
 require('dotenv').config();
+
+//* Controllers
+const userController = require('./controllers/userController');
+
 
 massive(process.env.CONNECTION_STRING).then(db => app.set('db', db)).catch(error => console.log("massive error", error));
 const app = express();
 app.use(bodyParser.json());
+//* User API Calls
+app.get('/api/getAllUsers', userController.getAllUsers);
 
 //* API's
 
