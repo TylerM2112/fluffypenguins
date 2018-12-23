@@ -11,6 +11,7 @@ export default class Panel extends Component {
         padding: typeof this.props.gutters === undefined ? '' : this.props.gutters === true ? '20px' : this.props.gutters,
         alignItems: this.props.alignContent || '',
         flexWrap: this.props.noWrap || 'wrap',
+        width: this.props.width || 'initial'
       },
       contentMargin: this.props.contentMargin || 0,
       children: []
@@ -24,7 +25,7 @@ export default class Panel extends Component {
       let newChildren = this.props.children.map(
         (e) => {
           if (e.type.name === 'Column') {
-            return React.cloneElement(e, { flex: getFlex, marginRight: this.state.contentMargin });
+            return React.cloneElement(e, { flex: e.props.flex ? e.props.flex : getFlex, marginRight: this.state.contentMargin });
           }
           else {
             return e;
