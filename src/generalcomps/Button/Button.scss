@@ -1,0 +1,42 @@
+@import '../../App';
+
+.Button {
+  width: 100px;
+  border-radius: 3px;
+  font-size: 20px;
+  padding: 3px;
+  cursor: pointer;
+  transition: all .2s;
+
+  &:active {
+    transform: scale(.90);
+  }
+  &:focus {
+    outline:none;
+  }
+  &:disabled {
+    background-color: rgba($primaryColor, .4);
+
+    &:hover {
+      background-color: rgba($primaryColor, .4);
+    }
+  }
+}
+
+.cta {
+  color: white;
+  border: none;
+  background-color: $primaryColor;
+  &:hover {
+    background-color: $lightPrimaryColor;
+  }
+}
+
+.ghost {
+  background-color: white;
+  border: solid $primaryColor 2px;
+  padding: 1px;
+  color: $bodyText;
+}
+
+
