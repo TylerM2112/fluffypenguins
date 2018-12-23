@@ -8,8 +8,9 @@ export default class Column extends Component {
 
     this.state = {
       style: {
-        flex: this.props.flex ? 1 : 0,
-        marginRight: this.props.marginRight
+        flex: this.props.flex ? 1 : '0',
+        marginRight: this.props.marginRight,
+        justifyContent: this.props.justifyContent || 'flex-start',
       }
     }
   }

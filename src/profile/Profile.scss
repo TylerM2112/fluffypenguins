@@ -1,0 +1,44 @@
+@import '../App.scss';
+
+.profile-outer-container {
+  background-color: $primaryColor;
+  color: white;
+  padding: 0 20px;
+
+  .profile-container {
+    padding: 10px;
+    // width: 80%;
+    margin: auto;
+    // border: solid black 1px;
+  }
+
+  .profile-image {
+    height: 50px;
+    border-radius: 50%;
+  }
+
+  .flex-column {
+    margin-left: 10px;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+  }
+
+  .flex-column > * {
+    margin-bottom: 5px;
+  }
+}
+
+.content-container {
+  width: 100%;
+  background-color: rgb(248, 248, 248);
+
+  div {
+    padding: 10px;
+    background-color: white;
+    width: 50%;
+    height: 100vh;
+    // border:solid;
+    margin:auto;
+  }
+}
