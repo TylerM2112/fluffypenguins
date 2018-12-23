@@ -1,56 +1,48 @@
 import React, { Component } from 'react';
-
-import './profile.css';
-import UserDetails from './components/UserDetails';
-import AddressList from './components/AddressList';
-import FriendRequests from './components/FriendRequests';
-import GroupRequests from './components/GroupRequests';
-import EventRequests from './components/EventRequests';
-
+import Panel from '../generalcomps/Panel/Panel';
+import Column from '../generalcomps/Panel/Column';
+import './Profile.scss';
+import profileImg from '../assets/images/me.jpeg';
+import logo from '../assets/images/mwLogoSmall.png';
 export default class Profile extends Component {
-  constructor() { 
-    super();
-    this.state = {};
-  }
   render() {
     return (
-      <div className="profile-container">
-    <UserDetails />
-        <AddressList address={alist}/>
-    <FriendRequests />
-    <GroupRequests />
-    <EventRequests />
-  </div>
+      <div>
+      <div className="profile-outer-container">
+        <div className="profile-container">
+          <Panel
+            flexAll
+            justifyContent="space-between"
+            contentMargin="10px">
+            <Column>
+              <img src={ logo } alt="logo" />
+            </Column>
+            <Column justifyContent="center">
+              <Panel
+                justifyContent="space-around"
+                width="100%"
+              >
+                <Column><span className="headerText">Groups</span></Column>
+                <Column><span className="headerText">Friends</span></Column>
+                <Column><span className="headerText">Events</span></Column>
+              </Panel>
+            </Column>
+            <Column justifyContent='flex-end'>
+              <img className="profile-image" src={ profileImg } alt='' />
+              <div className="flex-column">
+              <span className="headerText" style={{ fontSize: '20px', textAlign: 'center' }}>Tyler Miller</span>
+              <span className="bodyText" style={{ fontSize: '14px', textAlign: 'right' }}>tmiller2112@gmail.com</span>
+              </div>
+            </Column>
+          </Panel>
+        </div>
+      </div>
+      <div className="content-container">
+        <div>
+        asdasad
+        </div>
+      </div>
+      </div>
     );
   }
 }
-
-const alist = [
-  {
-    label: "Home",
-    address: "19920 N 23rd Ave",
-    address2: "#2045",
-    city: "Phoenix",
-    state: "AZ",
-    zip: 85027,
-    favorited: true,
-  },
-  {
-    label: "Work",
-    address: "19920 N 23rd Ave",
-    address2: "#2045",
-    city: "Phoenix",
-    state: "AZ",
-    zip: 85027,
-    favorited: false,
-  },
-  {
-    label: "School",
-    address: "19920 N 23rd Ave",
-    address2: "#2045",
-    city: "Phoenix",
-    state: "AZ",
-    zip: 85027,
-    favorited: false,
-  },
-];
