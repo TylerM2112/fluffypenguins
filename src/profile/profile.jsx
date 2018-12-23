@@ -6,7 +6,7 @@ export default class Profile extends Component {
     return (
       <Panel
         gutters
-        justifyContent='center'>
+        contentMargin='100px'>
         <Column flex >Column 1</Column>
         <Column> Column 2</Column>
         <Column>Column 3</Column>

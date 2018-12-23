@@ -12,18 +12,19 @@ export default class Panel extends Component {
         alignItems: this.props.alignContent || '',
         flexWrap: this.props.noWrap || 'wrap',
       },
-      
+      contentMargin: this.props.contentMargin || 0,
       children: []
     }
   }
 
   componentDidMount() {
     
-    if (this.props.flexAll) {
+    if (this.props.flexAll || this.state.contentMargin) {
+      let getFlex = this.props.flexAll ? 1 : 0;
       let newChildren = this.props.children.map(
         (e) => {
           if (e.type.name === 'Column') {
-            return React.cloneElement(e, { flex: 1 });
+            return React.cloneElement(e, { flex: getFlex, marginRight: this.state.contentMargin });
           }
           else {
             return e;

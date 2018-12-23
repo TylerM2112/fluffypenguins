@@ -15,21 +15,4 @@ const App = () =>
     </div>
   );
 
-const Header = () => (
-  <div>
-    <image />
-  </div>
-)
-
-const Groups = () => (
-  <div>
-    <h3>Groups</h3>
-  </div>
-)
-const Events = () => (
-  <div>
-    <h3>Events</h3>
-  </div>
-)
-
 export default App;
