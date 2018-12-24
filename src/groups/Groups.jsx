@@ -1,18 +1,14 @@
 import React, { Component } from 'react';
 import './Groups.scss';
-import fun from '../assets/images/me.jpeg';
 
 import Panel from '../generalcomps/Panel/Panel';
 import Column from '../generalcomps/Column/Column';
-import Button from '../generalcomps/Button/Button';
-
+import Tile from '../generalcomps/Tile/Tile';
 
 export default class Groups extends Component {
-  constructor() { 
+  constructor() {
     super();
     this.state = {
-      groupName: "Bestest Friends in the World!",
-      groupFounder: "Tyler Miller",
     }
   }
   render() {
@@ -20,66 +16,70 @@ export default class Groups extends Component {
       <div>
         <Panel flexAll>
 
-        <Column>
-          <div 
-            className="side-container">
+          <Column>
+            <div
+              className="side-container">
 
-          asdasd
+              asdasd
 
           </div>
 
-        </Column>
-        
-        <Column
-          padding="5px 10px"
-          justifyContent="center" 
+          </Column>
+
+          <Column
+            padding="5px 10px"
+            justifyContent="center"
             width="50%">
             <div className="middle-container">
-              
+
               <Panel
                 justifyContent="center">
-                  <span className="headerText group-text">
-                    GROUPS YOU ARE A PART OF
-                  </span>
+                <div class="group-text">
+                  <div>YOUR GROUPS</div>
+                </div>
               </Panel>
 
               <Panel
                 justifyContent="center"
                 width="100%">
                 <Panel
-                  justifyContent="space-between"
                   width="100%"
                   contentMargin="10px">
                   <Column
                     flexBasis="calc(33% - 20px)">
-                    askdnakjnd
+                    <Tile />
                   </Column>
                   <Column
                     flexBasis="calc(33% - 20px)">
-                    askdnakjnd
+                    <Tile />
                   </Column>
                   <Column
                     flexBasis="calc(33% - 20px)">
-                    askdnakjnd
+                    <Tile />
                   </Column>
                   <Column
                     flexBasis="calc(33% - 20px)">
-                    askdnakjnd
+                    <Tile />
+                  </Column>
+                  <Column
+                    flexBasis="calc(33% - 20px)"
+                    className="tile-container">
+                    <div className="add-item"><p>+</p></div>
                   </Column>
                 </Panel>
               </Panel>
 
             </div>
-        </Column>
+          </Column>
 
-        <Column>
-          <div 
-            className="side-container">
-            asdasd
+          <Column>
+            <div
+              className="side-container">
+              asdasd
           </div>
-        </Column>
+          </Column>
 
-      </Panel>
+        </Panel>
       </div>
     );
   }

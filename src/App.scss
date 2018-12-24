@@ -66,11 +66,20 @@ table {
 .side-container {
   background-color: rgb(243, 243, 243);
   width: 100%;
-  height: calc(100vh - 85px);
+  height: 100%;
 }
 
 .middle-container {
 	width: 100%;
 }
 
+.add-item {
+	display: flex;
+	color: rgb(5, 202, 5);
+	font-size: 350px;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	cursor: pointer;
+}
 
