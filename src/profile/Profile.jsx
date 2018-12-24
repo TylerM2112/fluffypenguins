@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Panel from '../generalcomps/Panel/Panel';
 import Column from '../generalcomps/Panel/Column';
 import './Profile.scss';  
+
 export default class Profile extends Component {
   render() {
     return (
@@ -33,7 +34,6 @@ export default class Profile extends Component {
         </Column>
 
       </Panel>
-
       </div>
     );
   }
