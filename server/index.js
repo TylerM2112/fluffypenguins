@@ -15,6 +15,7 @@ const app = express();
 app.use(bodyParser.json());
 //* User API Calls
 app.get('/api/getAllUsers', userController.getAllUsers);
+app.get('/api/addUsers', userController.addUsers);
 
 //* API's
 
