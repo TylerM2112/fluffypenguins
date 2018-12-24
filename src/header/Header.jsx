@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import Panel from '../generalcomps/Panel/Panel';
-import Column from '../generalcomps/Panel/Column.jsx';
+import Column from '../generalcomps/Column/Column.jsx';
 
 import profileImg from '../assets/images/me.jpeg';
 import logo from '../assets/images/mwLogoSmall.png';
@@ -16,15 +17,16 @@ export default class Header extends Component {
 
       <Column
         contentY="center">
-        <img src={ logo } alt="logo" />
+            <img src={logo} alt="logo" />
+            <div>Middlewhere</div>
       </Column>
 
       <Column
         justifyContent="space-around"
         contentY="center">
-        <span className="headerText">Groups</span>
-        <span className="headerText">Friends</span>
-        <span className="headerText">Events</span>
+        <Link to="/friends" className="headerText">Friends</Link>
+        <Link to="/groups" className="headerText">Groups</Link>
+        <Link to="/events" className="headerText">Events</Link>
 
       </Column>
 
