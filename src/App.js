@@ -8,6 +8,7 @@ import Header from './header/Header';
 import Groups from './groups/Groups';
 import Events from './events/Events';
 import Friends from './friends/Friends';
+import GroupDetail from './groupdetail/GroupDetail';
 
 const App = () =>
   (
@@ -17,6 +18,7 @@ const App = () =>
         <Route exact path="/" component={ Login } />
         <Route exact path="/profile" component={ Profile } />
         <Route exact path="/groups" component={ Groups } />
+        <Route exact path="/group/:id" component={ GroupDetail } />
         <Route exact path="/events" component={ Events } />
         <Route exact path="/friends" component={ Friends } />
       </Switch>

@@ -1,0 +1,1 @@
+INSERT INTO users (first_name, last_name, email, picture, has_notification, groups, addresses) VALUES($1, $2, $3, $4, $5, $6);
