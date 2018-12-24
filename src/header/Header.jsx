@@ -16,9 +16,11 @@ export default class Header extends Component {
         gutters="5px 0px">
 
       <Column
-        contentY="center">
+            contentY="center">
+            <div className="logo-container">
             <img src={logo} alt="logo" />
-            <div>Middlewhere</div>
+              <div className="headerText">Middlewhere</div>
+              </div>
       </Column>
 
       <Column
@@ -37,11 +39,11 @@ export default class Header extends Component {
         <img className="profile-image" src={ profileImg } alt='' />
 
         <Column
-        contentY="center"
+          contentY="center"
           flexDirection="column">
           
-        <span className="headerText" style={{ fontSize: '20px', textAlign: 'center' }}>Tyler Miller</span>
-        <span className="bodyText" style={{ fontSize: '14px', textAlign: 'right' }}>tmiller2112@gmail.com</span>
+        <span className="headerText" style={{ fontSize: '20px', textAlign: 'center', padding: '5px' }}>Tyler Miller</span>
+        <span className="bodyText" style={{ fontSize: '14px', textAlign: 'right', padding: '5px' }}>tmiller2112@gmail.com</span>
 
         </Column>
 
