@@ -8,10 +8,17 @@ export default class Column extends Component {
 
     this.state = {
       style: {
-        flex: this.props.flex ? 1 : '0',
-        marginRight: this.props.marginRight,
-        justifyContent: this.props.justifyContent || 'flex-start',
-      }
+        flex            : this.props.flex ? 1 : '0',
+        marginRight     : this.props.marginRight || '0px',
+        marginBottom    : this.props.marginBottom || '0px',
+        marginTop       : this.props.marginBottom  || '0px',
+        justifyContent  : this.props.justifyContent || 'flex-start',
+        flexDirection   : this.props.flexDirection || 'row',
+        flexBasis       : this.props.width || '0px',
+        alignItems      : this.props.contentY || 'flex-start',
+        padding         : this.props.padding || '0px'
+      },
+      className: this.props.className ? `${this.props.className} column-container` : 'column-container' 
     }
   }
 
@@ -19,7 +26,7 @@ export default class Column extends Component {
     return (
       <div
         style={ this.state.style }
-        className="column-container">
+        className={ this.state.className }>
         { this.props.children }
     </div>
     );

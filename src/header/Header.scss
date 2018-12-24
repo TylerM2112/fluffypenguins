@@ -1,0 +1,12 @@
+@import '../variables.scss';
+
+.profile-image {
+  height: 50px;
+  border-radius: 50%;
+}
+
+.header-container {
+  background-color: $primaryColor;
+  padding: 0px 20px;
+  color: white;
+}

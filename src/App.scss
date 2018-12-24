@@ -1,38 +1,4 @@
-// .App {
-//   background-image: url('./assets/images/earth.png');
-//   background-repeat: no-repeat;
-//   background-attachment: fixed;
-//   background-position: center;
-//   text-align: center;
-//   height: 100%;
-// }
-
-.App-logo {
-  height: 30vmin;
-}
-
-.App-header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-  height: 100vh;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+@import './variables.scss';
 
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
@@ -83,15 +49,8 @@ table {
 	border-spacing: 0;
 }
 
-$primaryColor: #AA003B;
-$lightPrimaryColor: rgb(211, 4, 76);
-$darkPrimaryColor: #884557;
-$secondaryColor: #00A6A1;
-
-$bodyText: rgb(26,26,26);
-
 .headerText {
-  font-family: 'Poppins', sans-serif;
+  font-family: $headerFont;
   font-weight: 400;
   letter-spacing: 0px;
   word-spacing: 1px;
@@ -99,9 +58,15 @@ $bodyText: rgb(26,26,26);
 }
 
 .bodyText {
-  font-family: 'Roboto', sans-serif;
+  font-family: $bodyFont;
   letter-spacing: .2px;
   // font-weight: 700;
+}
+
+.side-container {
+  background-color: rgb(243, 243, 243);
+  width: 100%;
+  height: calc(100vh - 85px);
 }
 
 
