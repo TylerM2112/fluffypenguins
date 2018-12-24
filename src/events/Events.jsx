@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import Panel from '../generalcomps/Panel/Panel';
 import Column from '../generalcomps/Column/Column';
-import './Profile.scss';  
+import './Events.scss';  
 
-export default class Profile extends Component {
+export default class Events extends Component {
   render() {
     return (
       <div>
