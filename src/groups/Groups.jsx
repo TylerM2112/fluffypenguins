@@ -19,9 +19,6 @@ export default class Groups extends Component {
           <Column>
             <div
               className="side-container">
-
-              asdasd
-
           </div>
 
           </Column>
@@ -117,7 +114,6 @@ export default class Groups extends Component {
           <Column>
             <div
               className="side-container">
-              asdasd
           </div>
           </Column>
 
