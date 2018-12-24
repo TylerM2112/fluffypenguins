@@ -7,6 +7,8 @@
   border-radius: 3%;
   border: solid rgba(0,0,0,.1) 1px;
   transition: all .25s; 
+  background: linear-gradient(0deg, rgb(3, 130, 248), 1%, rgb(243, 243, 243) 35%);
+  cursor: pointer;
   
     &:hover {
       box-shadow: 0 0 4px 0 rgba(46,62,72,.12), 0 4px 12px 0 rgba(46,62,72,.12);
@@ -20,48 +22,65 @@
     }
     a:visited {
       color: black;
-
     }
     a:hover {
       color: black;
     }
     a:active {
       color: black;
-
     }
 }
-.info-container{ 
+
+.group-text {
+  height: 30px;
+  width: 100%;
+  text-align: left;
+  margin: 10px;
+}
+
+//Renders this scss class if a tile is populated as 'group' type.
+.group-info-container { 
   display: flex;
   flex-direction: column;
   text-align: center;
-}
+  
+  .tile-image {
+    height: 200px;
+    width: 100%;
+    border-top-left-radius: 3%;
+    border-top-right-radius: 3%;
+    background-size: cover;
+    background-position: center;
+    // filter: invert(20%) hue-rotate(30deg) saturate(150%) brightness(120%) contrast(120%) ;
+  }
 
-.info-date {
-  color: rgb(156,156, 156);
-  margin-top: 15px;
-}
+  .extra-info {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    color: rgb(114, 114, 114);
+    margin-top: 5px;
+  
+    div {
+      margin: 5px;
+    }
+  }
 
-.info-name {
-  margin-top: 20px; 
-  font-size: 30px;
-}
-.tile-image {
-  height: 200px;
-  width: 100%;
-  border-top-left-radius: 3%;
-  border-top-right-radius: 3%;
-  background-size: cover;
-  background-position: center;
-  filter: invert(20%) hue-rotate(30deg) saturate(150%) brightness(120%) contrast(120%) ;
+  .info-name {
+    margin: 5px 0px;
+    padding: 5px; 
+    font-size: 30px;
+  }
+
 }
 
 .founder-info {
-  color: rgb(156,156, 156);
+  color: rgb(114, 114, 114);
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
-  margin-bottom: 25px;
+  margin-bottom: 20px;
 }
 
 .founder-image {

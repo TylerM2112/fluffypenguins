@@ -5,42 +5,54 @@ import me from '../../assets/images/me.jpeg';
 import coders from '../../assets/images/coders.jpg';
 
 export default class Tile extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
-      name: 'Best Coding Group Ever',
-      date: 'Sunday, December 23, 2018',
+      //All tiles use these props
+      type: 'group',
+      name: 'Best Coding Group Ever!',
+      date: 'December 23, 2018',
       image: coders,
       founderImage: me,
       founderName: 'Tyler Miller',
-      members: '',
+      members: Math.floor(Math.random() * 15) + 1,
+      //Group tiles use these props in addition
+      groupId: '',
+      //Event tiles use these props in addition
+      eventId: '',
+      eventDate: '',
+      eventLocation: ''
     }
   }
   render() {
-    let { name, date, image, founderImage, founderName, members } = this.state;
+    let { type, name, date, image, founderImage, founderName, members } = this.state;
 
     return (
       <div className="tile-container">
-
-        <a href="/groups">
-          <div className="info-container">
+        {type === 'group' ?
+          <a href="/groups">
+          <div className="group-info-container">
             <div className="tile-image" style={{ backgroundImage: `url(${image})` }} ></div>
-            <div className="bodyText info-date">
-              Founded: {date}
+            <div className="bodyText extra-info">
+              <div>Founded: {date}</div>
+              <div>Members: {members}</div>
             </div>
             <div className="headerText info-name">
               {name}
             </div>
           </div>
-        </a>
-
-        <div>
-          <div className="founder-info">
-            <img className="founder-image" src={founderImage} />
-            <div className="bodyText founder-name">Hosted by: {founderName}</div>
+          <div>
+            <div className="founder-info">
+              <img className="founder-image" src={founderImage} />
+              <div className="bodyText founder-name">Founder: {founderName}</div>
+            </div>
           </div>
-        </div>
-
+        </a>
+          :
+          //TODO: Make 'event' tile type layout inside <a> tag.
+          <a href="">
+          </a>
+        }
       </div>
     );
   }
