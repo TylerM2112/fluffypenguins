@@ -31,7 +31,7 @@ export default class Groups extends Component {
 
               <Panel
                 justifyContent="center">
-                <div class="group-text">
+                <div class="group-tiles-label">
                   <div>YOUR GROUPS</div>
                 </div>
               </Panel>
@@ -70,7 +70,7 @@ export default class Groups extends Component {
               </Panel>
               <Panel
                 justifyContent="center">
-                <div class="group-text">
+                <div class="group-tiles-label">
                   <div>PUBLIC GROUPS</div>
                 </div>
               </Panel>
