@@ -3,7 +3,8 @@ import './Groups.scss';
 
 import Panel from '../generalcomps/Panel/Panel';
 import Column from '../generalcomps/Column/Column';
-import Tile from '../generalcomps/Tile/Tile';
+import PrivateGroupsList from './components/PrivateGroupsList';
+import PublicGroupsList from './components/PublicGroupsList';
 
 export default class Groups extends Component {
   constructor() {
@@ -29,84 +30,9 @@ export default class Groups extends Component {
             width="50%">
             <div className="middle-container">
 
-              <Panel
-                justifyContent="center">
-                <div class="group-tiles-label">
-                  <div>YOUR GROUPS</div>
-                </div>
-              </Panel>
+              <PrivateGroupsList />
 
-              <Panel
-                justifyContent="center"
-                width="100%">
-                <Panel
-                  width="100%"
-                  contentMargin="10px">
-                  <Column
-                    flexBasis="calc(33% - 20px)">
-                    <Tile />
-                  </Column>
-                  <Column
-                    flexBasis="calc(33% - 20px)">
-                    <Tile />
-                  </Column>
-                  <Column
-                    flexBasis="calc(33% - 20px)">
-                    <Tile />
-                  </Column>
-                  <Column
-                    flexBasis="calc(33% - 20px)">
-                    <Tile />
-                  </Column>
-                  <Column
-                    flexBasis="calc(33% - 20px)"
-                    className="tile-container">
-                    <div className="add-item">
-                      <h1 className="headerText">CREATE A GROUP</h1>
-                      <div className="plus-sign"></div>
-                    </div>
-                  </Column>
-                </Panel>
-              </Panel>
-              <Panel
-                justifyContent="center">
-                <div class="group-tiles-label">
-                  <div>PUBLIC GROUPS</div>
-                </div>
-              </Panel>
-
-              <Panel
-                justifyContent="center"
-                width="100%">
-                <Panel
-                  width="100%"
-                  contentMargin="10px">
-                  <Column
-                    flexBasis="calc(33% - 20px)">
-                    <Tile />
-                  </Column>
-                  <Column
-                    flexBasis="calc(33% - 20px)">
-                    <Tile />
-                  </Column>
-                  <Column
-                    flexBasis="calc(33% - 20px)">
-                    <Tile />
-                  </Column>
-                  <Column
-                    flexBasis="calc(33% - 20px)">
-                    <Tile />
-                  </Column>
-                  <Column
-                    flexBasis="calc(33% - 20px)"
-                    className="tile-container">
-                   <div className="add-item">
-                      <h1 className="headerText">CREATE A GROUP</h1>
-                      <div className="plus-sign"></div>
-                    </div>
-                  </Column>
-                </Panel>
-              </Panel>
+              <PublicGroupsList />
 
             </div>
           </Column>

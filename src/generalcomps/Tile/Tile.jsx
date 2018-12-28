@@ -10,7 +10,7 @@ export default class Tile extends Component {
     this.state = {
       //All tiles use these props
       type: 'group',
-      name: 'Best Coding Group Ever!',
+      name: 'Best Coding Group Ever In The World!',
       date: 'December 23, 2018',
       image: coders,
       founderImage: me,
