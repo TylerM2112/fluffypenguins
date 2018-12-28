@@ -6,7 +6,36 @@
 }
 
 .header-container {
-  background-color: $primaryColor;
-  padding: 0px 20px;
+  // background-color: $primaryColor;
+  background-color: rgba(0, 0, 0, 0.746);
+  padding: 5px 10px;
   color: white;
+
+  .logo-container {
+    display: flex;
+    flex-direction: row;
+    width: 45%;
+    justify-content: space-evenly;
+    margin: auto 0px;
+    align-items: center;
+    cursor: pointer;
+
+    img {
+      width: 50px;
+      height: 30px;
+    }
+    .headerText{
+      padding: 5px;
+      font-size: 25px;
+    }
+  }
+
+  a {
+    color: white;
+    text-decoration: none;
+    font-size: 25px;
+    &:hover {
+      color: $secondaryColor;
+    }
+  }
 }

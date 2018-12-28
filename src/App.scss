@@ -66,11 +66,39 @@ table {
 .side-container {
   background-color: rgb(243, 243, 243);
   width: 100%;
-  height: calc(100vh - 85px);
+  height: 100%;
 }
 
 .middle-container {
 	width: 100%;
 }
 
+.add-item {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin: 60px auto;
+	width: 100%;
+	padding: 10px;
+	.plus-sign {
+		height: 200px;
+		width: 100%;
+		background-size: contain;
+    background-position: center;
+		background-image: url('./assets/images/plusSign.png');
+		background-repeat: no-repeat;
+	}
+	h1 {
+		font-size: 25px;
+		margin-bottom: 30px;
+	}
+}
 
+//Modifies the title to each list of tiles in groups and events page.
+.tiles-list-label {
+  font-size: 30px;
+  justify-content: left;
+  width: 100%;
+  padding: 10px;
+}
