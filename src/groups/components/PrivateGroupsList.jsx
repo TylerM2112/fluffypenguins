@@ -10,7 +10,7 @@ export default class PrivateGroupsList extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      showGroups: true,
+      showGroups: false,
     }
   }
   render() {
@@ -58,8 +58,30 @@ export default class PrivateGroupsList extends Component {
             </Panel>
           </Panel>
           :
-          <div></div>
-      }
+          <div>
+            <Panel
+              justifyContent="center"
+              flexDirection="column">
+              <Column
+                flex
+                className="tile-container"
+                alignItems="center"
+                justifyContent="center"
+                flexDirection="column"
+                flexBasis="calc(40% - 20px)"
+                maxWidth="calc(40% - 20px)">
+                <div className="no-groups-text">
+                  <h1 className="headerText">You do not have any groups!</h1>
+                  <h1 className="headerText">Try creating one and inviting friends!</h1>
+                </div>
+                <div className="add-item">
+                  <h1 className="headerText">CREATE A GROUP</h1>
+                  <div className="plus-sign"></div>
+                </div>
+              </Column>
+            </Panel>
+          </div>
+        }
 
       </div>
     );

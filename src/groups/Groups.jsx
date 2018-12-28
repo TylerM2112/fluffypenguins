@@ -20,8 +20,8 @@ export default class Groups extends Component {
           <Column>
             <div
               className="side-container">
-          </div>
 
+          </div>
           </Column>
 
           <Column
@@ -29,17 +29,15 @@ export default class Groups extends Component {
             justifyContent="center"
             width="50%">
             <div className="middle-container">
-
               <PrivateGroupsList />
-
               <PublicGroupsList />
-
             </div>
           </Column>
 
           <Column>
             <div
               className="side-container">
+              
           </div>
           </Column>
 
