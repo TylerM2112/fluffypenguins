@@ -1,0 +1,107 @@
+@import '../../variables.scss';
+
+// .past-event-container {
+//   // flex: 1;
+//   // flex-basis: 100% !important;
+//   border: solid rgba(0,0,0,.1) 1px;
+//   // padding: 5px;
+//   border-radius: 5px;
+//   width: calc(25% - 20px);
+//   min-width: 150px;
+//   display: flex;
+//   justify-content: center;
+//   flex-direction: column;
+//   font-size: 14px;
+//   cursor: pointer;
+//   transition: all .25s;
+//   padding-bottom: 5px;
+
+//   &:hover {
+//     box-shadow: 0 0 4px 0 rgba(46,62,72,.12), 0 4px 12px 0 rgba(46,62,72,.12);
+//     transform: translate(-1px)
+//   }
+
+//   > * {
+//     display: flex;
+//     padding: 2px;
+//     align-items: center;
+//     justify-content: center;
+//     padding: 0 5px;
+//   }
+
+//   > *:first-child {
+//     font-size: 18px;
+//     border-radius: 5px 5px 0 0;
+//     margin-bottom: 5px;
+//     background-color: $lightPrimaryColor;
+//     padding: 5px;
+//     color: white;
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+//     justify-content: center;
+
+//     > *:last-child {
+//       margin-top: 5px;
+//       font-size: 12px;
+//     }
+//   }
+
+//   > *:last-child {
+//     font-size: 12px;
+//   }
+// }
+
+.past-event-container {
+  border: solid rgba(0,0,0,.1) 1px;
+  font-size: 14px;
+  display: flex;
+  // flex: 0 1;
+  align-content: space-around;
+  flex-direction: column;
+  align-items: center;
+  max-width: 150px;
+  padding: 0px 10px;
+  cursor: pointer;
+  transition: all .25s;
+  border-radius: 5px;
+
+  &:hover {
+        box-shadow: 0 0 4px 0 rgba(46,62,72,.12), 0 4px 12px 0 rgba(46,62,72,.12);
+        transform: translate(-1px)
+      }
+
+  .event-place-container {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    padding: 10px;
+    width: 100%;
+    color: white;
+    background-color: $lightPrimaryColor;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    text-align:center;
+    // margin-bottom: 10px;
+
+    > *:first-child {
+      margin-bottom: 4px;
+      font-size: 18px;
+    }
+  }
+
+  .additional-info {
+    padding: 10px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    // border: solid;
+    align-items: center;
+    flex: 1;
+  }
+
+  .address-container {
+    font-size: 12px;
+  }
+}
