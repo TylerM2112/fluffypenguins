@@ -1,0 +1,27 @@
+.member-comp {
+  background-color: rgb(255, 255, 255);
+  border: solid rgba(0,0,0,.1) 1px;
+  border-radius: 10px;
+  height: 150px;
+  width: 110px;
+  display:flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  transition: all .25s;
+  cursor: pointer;
+  
+  &:hover {
+    box-shadow: 0 0 4px 0 rgba(46,62,72,.12), 0 4px 12px 0 rgba(46,62,72,.12);
+    transform: translate(-1px)
+  }
+
+  img {
+    width: 70px;
+    border-radius: 50%,
+  }
+
+  .headerText {
+    font-weight: 700;
+  }
+}
