@@ -4,7 +4,85 @@ import Column from '../generalcomps/Column/Column';
 
 import './GroupDetail.scss';
 import groupMemberImg from '../assets/images/me.jpeg'
+import MemberTitle from '../generalcomps/MemberTile/MemberTile';
+import PastEventTile from '../generalcomps/PastEventTile/PastEventTile';
 export default class GroupDetail extends Component {
+
+  constructor(props) {
+    super(props);
+    this.fakeProps();
+    this.state = {
+      groupName: this.props.groupName || '',
+      groupCreator: this.props.groupCreator || '',
+      groupCreatorImg: this.props.groupCreatorImg || groupMemberImg,
+      groupType: this.props.groupType || 'Private',
+      groupDescription: this.props.groupDescription || '',
+      groupImg: this.props.groupImg || '',
+      dateCreated: this.props.dateCreated || '',
+      members: this.props.members || [],
+      memberCount: this.props.memberCount || 0,
+      pastEvents: this.props.pastEvents || [],
+    }
+  }
+
+  displayMembers = () => {
+   return this.state.members.map(
+      (e, i) => {
+        return <MemberTitle user={e} key={i} />
+      }
+    )
+  }
+
+  displayPastEvents = () => {
+    return this.state.pastEvents.map(
+      (e, i) => {
+        return <PastEventTile event={e} key={i} />
+      }
+    )
+  }
+
+  //TODO MAKE THIS OUT WE RESOLVE PROPS AND DB CALL
+  fakeProps = () => {
+    this.props = {
+      groupName: 'The Best Group Ever!',
+      groupCreator: 'Tyler Miller',
+      groupCreatorImg: groupMemberImg,
+      groupType: 'Private',
+      groupDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam lacinia id diam in elementum. Maecenas ut orci consectetur, venenatis lectus in, congue sem. Donec euismod quam vel urna accumsan fringilla aliquet vel sem. Pellentesque auctor nibh vitae velit congue, eu maximus neque elementum. Nullam ultricies fringilla justo, sit amet tincidunt lacus sodales vitae. Nunc convallis risus vel euismod finibus. Vivamus tristique nisl dolor, in laoreet odio porttitor gravida.',
+      groupImg:  groupMemberImg,
+      dateCreated:  'December 25, 2015',
+      members:  [
+        { userImg: groupMemberImg, userName: 'Tyler Miller', userType: 'Creator', userId: 1},
+        { userImg: groupMemberImg, userName: 'Tyler Miller', userType: 'Creator', userId: 1},
+        { userImg: groupMemberImg, userName: 'Tyler Miller', userType: 'Creator', userId: 1},
+        { userImg: groupMemberImg, userName: 'Tyler Miller', userType: 'Creator', userId: 1},
+        { userImg: groupMemberImg, userName: 'Tyler Miller', userType: 'Creator', userId: 1},
+        { userImg: groupMemberImg, userName: 'Tyler Miller', userType: 'Creator', userId: 1},
+        { userImg: groupMemberImg, userName: 'Tyler Miller', userType: 'Creator', userId: 1},
+        { userImg: groupMemberImg, userName: 'Tyler Miller', userType: 'Creator', userId: 1},
+        { userImg: groupMemberImg, userName: 'Tyler Miller', userType: 'Creator', userId: 1},
+        { userImg: groupMemberImg, userName: 'Tyler Miller', userType: 'Creator', userId: 1},
+        { userImg: groupMemberImg, userName: 'Tyler Miller', userType: 'Creator', userId: 1},
+        { userImg: groupMemberImg, userName: 'Tyler Miller', userType: 'Creator', userId: 1},
+        { userImg: groupMemberImg, userName: 'Tyler Miller', userType: 'Creator', userId: 1},
+        { userImg: groupMemberImg, userName: 'Tyler Miller', userType: 'Creator', userId: 1},
+        { userImg: groupMemberImg, userName: 'Tyler Miller', userType: 'Creator', userId: 1},
+        { userImg: groupMemberImg, userName: 'Tyler Miller', userType: 'Creator', userId: 1},
+        { userImg: groupMemberImg, userName: 'Tyler Miller', userType: 'Creator', userId: 1},
+      ],
+      memberCount:  0,
+      pastEvents:  [
+        { placeName: 'The Fuji', city: 'Phoenix', state: 'AZ', eventTime: 'December 24, 2018', attendees: 5},
+        { placeName: 'The Fujiasda we ASasAS asdf fasd fas dfas df as dfs fd', city: 'Phoenix', state: 'AZ', eventTime: 'December 24, 2018', attendees: 5},
+        { placeName: 'The Fuji', city: 'Phoenix', state: 'AZ', eventTime: 'December 24, 2018', attendees: 5},
+        { placeName: 'The Fuji', city: 'Phoenix', state: 'AZ', eventTime: 'December 24, 2018', attendees: 5},
+        { placeName: 'The Fuji', city: 'Phoenix', state: 'AZ', eventTime: 'December 24, 2018', attendees: 5},
+        { placeName: 'The Fuji', city: 'Phoenix', state: 'AZ', eventTime: 'December 24, 2018', attendees: 5},
+      ],
+
+    }
+  }
+
   render() {
     return (
       <div>
@@ -25,53 +103,41 @@ export default class GroupDetail extends Component {
                 <img src="https://secure.meetupstatic.com/photos/event/4/f/d/6/highres_477260438.jpeg" alt="group"/>
 
                 </div>
-                <p className="headerText group-header-text">THE BEST GROUP EVER!</p>
+                <p className="headerText group-header-text">{ this.state.groupName }</p>
 
                 <div class="group-details">
                   <div>
-                    <img src={ groupMemberImg } alt="tyler miller"/>
-                   <span className="bodyText grey-text">Created By: Tyler Miller</span>
+                    <img src={ this.state.groupCreatorImg } alt="tyler miller"/>
+                   <span className="bodyText grey-text">Created By: { this.state.groupCreator }</span>
                   </div>
-                  <span className="bodyText grey-text">Founded On: December, 24, 2018</span>
-                  <span className="bodyText grey-text">Members: 5</span>
+                  <span className="bodyText grey-text">Founded On: { this.state.dateCreated }</span>
+                  <span className="bodyText grey-text">Members: { this.state.memberCount }</span>
+                  <span className="bodyText grey-text">{ this.state.groupType }</span>
                 </div>
             </div>
           <div className="group-info-container">
             <div>
             <div className="details-container">
             <p className="headerText" style={{ fontSize: '20px', fontWeight: 700}}>Details</p>
-            <p className="bodyText">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam lacinia id diam in elementum. Maecenas ut orci consectetur, venenatis lectus in, congue sem. Donec euismod quam vel urna accumsan fringilla aliquet vel sem. Pellentesque auctor nibh vitae velit congue, eu maximus neque elementum. Nullam ultricies fringilla justo, sit amet tincidunt lacus sodales vitae. Nunc convallis risus vel euismod finibus. Vivamus tristique nisl dolor, in laoreet odio porttitor gravida.</p>
+            <p className="bodyText"> { this.state.groupDescription }</p>
+            </div>
+            <div className="details-container">
+            <p className="headerText" style={{ fontSize: '20px', fontWeight: 700}}>THE BEST GROUP EVER! Past Events</p>
+            <div className="double-container">
+              <div>
+              <div className="past-event-container-flex">
+               { this.displayPastEvents() }
+              </div>
+            </div>
+            </div>
             </div>
             </div>
            <div className="members-container">
-            <p className="headerText" style={{ fontSize: '20px', fontWeight: 700}}>Attendees(5)</p>
+            <p className="headerText" style={{ fontSize: '20px', fontWeight: 700}}>Members({ this.state.memberCount })</p>
 
             <div className="member-comp-container">
-              <div className="member-comp">
-                <img src={ groupMemberImg } alt="" style={{ width: '70px', borderRadius: '50%'}} />
-                <p className="headerText" style={{ fontWeight: 700}}>Tyler Miller</p>
-                <p className="bodyText grey-text">Creator</p>
-              </div>
-              <div className="member-comp">
-                <img src={ groupMemberImg } alt="" style={{ width: '70px', borderRadius: '50%'}} />
-                <p className="headerText" style={{ fontWeight: 700}}>Tyler Miller</p>
-                <p className="bodyText grey-text">Creator</p>
-              </div>
-              <div className="member-comp">
-                <img src={ groupMemberImg } alt="" style={{ width: '70px', borderRadius: '50%'}} />
-                <p className="headerText" style={{ fontWeight: 700}}>Tyler Miller</p>
-                <p className="bodyText grey-text">Creator</p>
-              </div>
-              <div className="member-comp">
-                <img src={ groupMemberImg } alt="" style={{ width: '70px', borderRadius: '50%'}} />
-                <p className="headerText" style={{ fontWeight: 700}}>Tyler Miller</p>
-                <p className="bodyText grey-text">Creator</p>
-              </div>
-              <div className="member-comp">
-                <img src={ groupMemberImg } alt="" style={{ width: '70px', borderRadius: '50%'}} />
-                <p className="headerText" style={{ fontWeight: 700}}>Tyler Miller</p>
-                <p className="bodyText grey-text">Creator</p>
-              </div>
+             
+                { this.displayMembers() }
             </div>
            </div>
           </div>
