@@ -30,7 +30,7 @@ export default class Tile extends Component {
     return (
       <div className="tile-container">
         {type === 'group' ?
-          <a href="/groups">
+          <a href="/creategroup">
           <div className="group-tile-info-container">
             <div className="group-tile-image" style={{ backgroundImage: `url(${image})` }} ></div>
             <div className="bodyText extra-info">

@@ -3,8 +3,8 @@ import './Groups.scss';
 
 import Panel from '../generalcomps/Panel/Panel';
 import Column from '../generalcomps/Column/Column';
-import PrivateGroupsList from './components/PrivateGroupsList';
-import PublicGroupsList from './components/PublicGroupsList';
+import PrivateGroupsList from './components/GroupLists/PrivateGroupsList';
+import PublicGroupsList from './components/GroupLists/PublicGroupsList';
 
 export default class Groups extends Component {
   constructor() {
@@ -29,8 +29,10 @@ export default class Groups extends Component {
             justifyContent="center"
             width="50%">
             <div className="middle-container">
+              
               <PrivateGroupsList />
               <PublicGroupsList />
+
             </div>
           </Column>
 

@@ -2,15 +2,15 @@ import React, { Component } from 'react';
 
 import './GroupsList.scss';
 
-import Panel from '../../generalcomps/Panel/Panel';
-import Column from '../../generalcomps/Column/Column';
-import Tile from '../../generalcomps/Tile/Tile';
+import Panel from '../../../generalcomps/Panel/Panel';
+import Column from '../../../generalcomps/Column/Column';
+import Tile from '../../../generalcomps/Tile/Tile';
 
 export default class PrivateGroupsList extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      showGroups: false,
+      showGroups:true,
     }
   }
   render() {
