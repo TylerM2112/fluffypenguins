@@ -8,29 +8,29 @@ export default class Tile extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      //All tiles use these props
-      type: 'group',
-      name: 'Best Coding Group Ever In The World!',
-      date: 'December 23, 2018',
-      image: coders,
-      founderImage: me,
-      founderName: 'Tyler Miller',
-      members: Math.floor(Math.random() * 15) + 1,
-      //Group tiles use these props in addition
-      groupId: '',
-      //Event tiles use these props in addition
-      eventId: '',
-      eventDate: '',
-      eventLocation: ''
+      type: this.props.groupInfo.type || null,
+      groupType: this.props.groupInfo.type || null,
+      groupId: this.props.groupInfo.groupId || null,
+      name: this.props.groupInfo.groupName || null,
+      date: this.props.groupInfo.dateCreated || null,
+      image: coders || this.props.groupInfo.groupImg || null,
+      founderImage: me || this.props.groupCreatorImg || null,
+      founderName: this.props.groupInfo.groupCreator || null,
+      members: this.props.groupInfo.members.length || null,
+      eventId: this.props.groupInfo.eventId || null,
+      eventDate: this.props.groupInfo.eventDate || null,
+      eventLocation: this.props.groupInfo.eventLocation || null,
     }
   }
+
   render() {
-    let { type, name, date, image, founderImage, founderName, members } = this.state;
+    let { type, groupType, groupId, name, date, image, founderImage, founderName, members, eventId, eventDate, eventLocation } = this.state;
 
     return (
-      <div className="tile-container">
+      <div className="">
+        <div className="tile-container">
         {type === 'group' ?
-          <a href="/groups">
+          <a href={`/group/${groupId}`}>
           <div className="group-tile-info-container">
             <div className="group-tile-image" style={{ backgroundImage: `url(${image})` }} ></div>
             <div className="bodyText extra-info">
@@ -44,7 +44,7 @@ export default class Tile extends Component {
           <div>
             <div className="tile-founder-info">
               <img className="founder-image" src={founderImage} />
-              <div className="bodyText founder-name">Founder: {founderName}</div>
+              <div className="bodyText founder-name">Founder: <span className="bold-text">{founderName}</span></div>
             </div>
           </div>
         </a>
@@ -52,7 +52,8 @@ export default class Tile extends Component {
           //TODO: Make 'event' tile type layout inside <a> tag.
           <a href="">
           </a>
-        }
+          }
+          </div>
       </div>
     );
   }
