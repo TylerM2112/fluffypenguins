@@ -4,3 +4,9 @@
   margin: auto;
   margin-top: 15px;
 }
+
+.group-tile-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}

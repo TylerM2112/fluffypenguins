@@ -5,61 +5,56 @@ import './CreateGroup.scss';
 import Panel from '../../../generalcomps/Panel/Panel';
 import Column from '../../../generalcomps/Column/Column';
 import Button from '../../../generalcomps/Button/Button';
+import MemberTitle from '../../../generalcomps/MemberTile/MemberTile';
 
+import groupMemberImg from '../../../assets/images/me.jpeg';
 
 export default class CreateGroup extends Component {
+  constructor() {
+    super();
+    this.fakeProps();
+    this.state = {
+      userId: this.props.userId || null,
+      friends: [
+        { userImg: groupMemberImg, userName: 'Tyler Miller', userId: 1 },
+        { userImg: groupMemberImg, userName: 'Tyler Miller', userId: 1 },
+        { userImg: groupMemberImg, userName: 'Tyler Miller', userId: 1 },
+        { userImg: groupMemberImg, userName: 'Tyler Miller', userId: 1 },
+        { userImg: groupMemberImg, userName: 'Tyler Miller', userId: 1 },
+        { userImg: groupMemberImg, userName: 'Tyler Miller', userId: 1 },
+        { userImg: groupMemberImg, userName: 'Tyler Miller', userId: 1 },
+        { userImg: groupMemberImg, userName: 'Tyler Miller', userId: 1 },
+      ],
+    }
+  }
+
+  displayFriends = () => {
+    return this.state.friends.map(
+      (e, i) => {
+        return <MemberTitle user={e} key={i} />
+      }
+    )
+  }
+
+  //TODO MAKE THIS OUT WE RESOLVE PROPS AND DB CALL
+  fakeProps = () => {
+    this.props = {
+      userId: 1,
+    }
+  }
   render() {
     return (
-      <div>
-        <Panel flexAll>
+      <div className="containers-container">
+        
+        <div className="side-container">
+        </div>
 
-          <Column>
-            <div
-              className="side-container">
+        <div className="middle-container">
+        </div>
 
-            </div>
-          </Column>
+        <div className="side-container">
+        </div>
 
-          <Column
-            padding="5px 10px"
-            justifyContent="center"
-            width="50%">
-            <div className="middle-container">
-              <Panel
-                flexAll
-                flexDirection="column">
-                <Column
-                  flex
-                  flexDirection="column"
-                  flexBasis="100%">
-                  <h1 className="headerText">Create a group!</h1>
-                  <label>group name:</label>
-                  <input></input>
-                  <label>group description:</label>
-                  <input></input>
-                  <label>group image:</label>
-                  <input></input>
-                </Column>
-                <Column
-                  flex
-                  flexDirection="column"
-                  flexBasis="100%">
-                <h1 className="headerText">Invite some friends to the group!</h1>
-                <h1 className="headerText">TODO: Add selectable friend tiles to be added to a list sent with database addition.</h1>
-                </Column>
-                <Button label="CREATE GROUP"/>
-              </Panel>
-            </div>
-          </Column>
-
-          <Column>
-            <div
-              className="side-container">
-
-            </div>
-          </Column>
-
-        </Panel>
       </div>
     );
   }

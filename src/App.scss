@@ -69,14 +69,24 @@ table {
   transition: all .4s;
 }
 
+.bold-text {
+	font-weight: 500;
+	color: black;
+}
+
+.containers-container {
+  display: flex;
+  flex-direction: row;
+}
+
 .side-container {
   background-color: rgb(243, 243, 243);
-  width: 100%;
+  width: 20%;
   height: 100%;
 }
 
 .middle-container {
-	width: 100%;
+	width: 60%;
 }
 
 .add-item {
